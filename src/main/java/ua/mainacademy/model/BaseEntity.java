@@ -2,9 +2,11 @@ package ua.mainacademy.model;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import javax.persistence.*;
 
+@ToString
 @Setter
 @Getter
 @MappedSuperclass

@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Data
 @Builder
-@ToString
+@ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "users")
