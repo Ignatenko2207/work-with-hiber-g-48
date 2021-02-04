@@ -1,6 +1,5 @@
 package ua.mainacademy.model;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 

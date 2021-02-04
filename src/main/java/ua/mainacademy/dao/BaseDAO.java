@@ -26,8 +26,8 @@ public class BaseDAO<T extends BaseEntity> {
         }
         SessionFactory sessionFactory = postgresSessionFactory.getHibernateSessionFactory();
         Session session = sessionFactory.openSession();
-        T t = session.get(type, id);
         Transaction transaction = session.beginTransaction();
+        T t = session.get(type, id);
         transaction.commit();
         session.close();
         return t;
