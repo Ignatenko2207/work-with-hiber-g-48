@@ -11,11 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Table(name = "orders")
 @Entity
-public class Order {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class Order extends BaseEntity{
 
     @ManyToOne(targetEntity = User.class)
     private User user;

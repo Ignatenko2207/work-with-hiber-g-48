@@ -15,7 +15,25 @@ class UserDAOTest {
                 .firstName("Alex")
                 .lastName("Ignatenko")
                 .build();
-        User savedUser = UserDAO.save(user);
+        User savedUser = new UserDAO().save(user);
         assertNotNull(savedUser.getId());
     }
+
+    @Test
+    void findById() {
+        User user = User.builder()
+                .login("ignatenko2207")
+                .password("123456")
+                .firstName("Alex")
+                .lastName("Ignatenko")
+                .build();
+        UserDAO userDAO = new UserDAO();
+        User savedUser = userDAO.save(user);
+        assertNotNull(savedUser.getId());
+
+        User foundUser = userDAO.findById(savedUser.getId());
+        assertNotNull(foundUser);
+        System.out.println(foundUser);
+    }
+
 }

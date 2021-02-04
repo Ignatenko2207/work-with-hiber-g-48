@@ -11,11 +11,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Table(name = "items")
 @Entity
-public class Item {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+public class Item extends BaseEntity{
 
     @Column(name = "iem_code", nullable = false)
     private String itemCode;
