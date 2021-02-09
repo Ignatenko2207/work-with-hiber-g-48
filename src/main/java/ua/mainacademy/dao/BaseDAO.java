@@ -35,9 +35,6 @@ public class BaseDAO<T extends BaseEntity> {
 
 
     public T save(T t) {
-        if (nonNull(t.getId())) {
-            throw new RuntimeException("Creation is failed!");
-        }
         SessionFactory sessionFactory = postgresSessionFactory.getHibernateSessionFactory();
         Session session = sessionFactory.openSession();
         Transaction transaction = session.beginTransaction();

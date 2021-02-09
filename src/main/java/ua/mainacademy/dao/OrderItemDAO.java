@@ -10,7 +10,9 @@ import ua.mainacademy.model.OrderItem;
 import ua.mainacademy.model.User;
 
 import javax.persistence.Query;
+import javax.persistence.SqlResultSetMapping;
 import java.util.List;
+import java.util.Map;
 
 import static java.util.Objects.isNull;
 
@@ -38,4 +40,7 @@ public class OrderItemDAO extends BaseDAO<OrderItem>{
         session.close();
         return result;
     }
+
+
+
 }
