@@ -26,4 +26,11 @@ public class Order extends BaseEntity{
         OPEN,
         CLOSED
     }
+
+    public Order(Integer id, User user, Long creationTime, Status status) {
+        super.setId(id);
+        this.user = user;
+        this.creationTime = creationTime;
+        this.status = status;
+    }
 }

@@ -36,4 +36,20 @@ class UserDAOTest {
         System.out.println(foundUser);
     }
 
+    @Test
+    void findByOtherId() {
+        User user = User.builder()
+                .login("ignatenko2207")
+                .password("123456")
+                .firstName("Alex")
+                .lastName("Ignatenko")
+                .build();
+        UserDAO userDAO = new UserDAO();
+        User savedUser = userDAO.save(user);
+        assertNotNull(savedUser.getId());
+
+        User foundUser = userDAO.findById(savedUser.getId());
+        assertNotNull(foundUser);
+        System.out.println(foundUser);
+    }
 }

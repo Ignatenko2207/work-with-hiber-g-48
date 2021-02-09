@@ -25,4 +25,11 @@ public class User extends BaseEntity{
     @Column(name = "last_name")
     private String lastName;
 
+    public User(Integer id, String login, String password, String firstName, String lastName) {
+        super.setId(id);
+        this.login = login;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 }

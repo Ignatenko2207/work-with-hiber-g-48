@@ -6,9 +6,9 @@ import javax.persistence.*;
 
 @Data
 @Builder
-@ToString
+@AllArgsConstructor()
 @NoArgsConstructor
-@AllArgsConstructor
+@ToString
 @Table(name = "order_items")
 @Entity
 public class OrderItem extends BaseEntity{
@@ -22,4 +22,10 @@ public class OrderItem extends BaseEntity{
     @Column(nullable = false)
     private Integer amount;
 
+    public OrderItem(Integer id, Item item, Order order, Integer amount) {
+        super.setId(id);
+        this.item = item;
+        this.order = order;
+        this.amount = amount;
+    }
 }
